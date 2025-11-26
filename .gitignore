@@ -1,0 +1,30 @@
+# Binaries
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Build artifacts
+*.out
+*.test
+
+# IDE/editor settings
+.idea/
+.vscode/
+*.code-workspace
+
+# Logs
+*.log
+
+# Go module caches (local overrides)
+.cache/
+.gomodcache/
+
+# Environment files
+.env
+
+# macOS
+.DS_Store
+
