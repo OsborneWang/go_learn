@@ -64,6 +64,12 @@ goServer
     -H "Content-Type: application/json" \
     -d '{"email":"user@example.com","password":"secret12"}'
   ```
+- 发送测试邮件：
+  ```bash
+  curl -X POST http://localhost:8080/api/v1/mail/test \
+    -H "Content-Type: application/json" \
+    -d '{"to":"user@example.com","subject":"Hello","message":"这是一封测试邮件"}'
+  ```
 
 响应成功时返回用户基础信息；失败会返回 `error` 字段描述。
 

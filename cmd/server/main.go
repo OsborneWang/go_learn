@@ -37,9 +37,10 @@ func main() {
 	mailService := services.NewMailService(cfg)
 	authService := services.NewAuthService(db, mailService)
 	authHandler := handlers.NewAuthHandler(authService)
+	mailHandler := handlers.NewMailHandler(mailService)
 
 	router := gin.Default()
-	routes.Register(router, authHandler)
+	routes.Register(router, authHandler, mailHandler)
 
 	log.Printf("Server listening on :%s", cfg.ServerPort)
 	if err := router.Run(":" + cfg.ServerPort); err != nil {
